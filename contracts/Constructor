@@ -1,0 +1,31 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract Constants {  
+    
+    string public tokenName;
+    uint public totalSupply;
+    
+    // Constant
+    address public constant MY_ADDRESS = 0x777788889999AaAAbBbbCcccddDdeeeEfFFfCcCc;
+    uint public constant MY_UINT = 123;
+    
+    //Immutable
+    address public immutable MY_ADDRESS;
+    uint public immutable MY_LUCKYNUMBER;
+
+    constructor(uint _myNumber) {
+        MY_ADDRESS = msg.sender;
+        MY_LUCKYNUMBER = _myNumber;
+    }
+
+    constructor(string memory name, uint number) {
+        tokenName = name;
+        totalSupply = number;
+    }
+
+    function set(uint number) public {
+        totalSupply = number;
+    }
+
+}
